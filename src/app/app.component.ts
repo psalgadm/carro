@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'carro';
+
+  entrada: {email: string} = {email: ''};
+
+  onEmailAdded(entradaData: {email: string} ) {
+    this.entrada =  { email : entradaData.email};
+  } 
 }
