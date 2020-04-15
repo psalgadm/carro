@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'carro';
 
-  entrada: {email: string} = {email: ''};
+  entrada: {email: string, validoCorreo: boolean} = {email: '', validoCorreo: false};
 
-  onEmailAdded(entradaData: {email: string} ) {
-    this.entrada =  { email : entradaData.email};
+  onEmailAdded(entradaData: {email: string, validoCorreo: boolean} ) {
+    this.entrada =  { email : entradaData.email,  validoCorreo : entradaData.validoCorreo};
   } 
 }

@@ -317,8 +317,9 @@
 
 <div class="content" role="main">
 
-  <app-correo (emailAdded)="onEmailAdded($event)" > </app-correo>
-  <span>{{entrada.email}}</span>
+  <app-correo [ngClass]="{'ocultar': entrada.validoCorreo}" (emailAdded)="onEmailAdded($event)" > </app-correo>
+  <span [ngClass]="{'ocultar': !entrada.validoCorreo}">HOLA {{entrada.email}}</span>
+  <app-listado [ngClass]="{'ocultar': !entrada.validoCorreo}" > </app-listado>
 
 </div>
 

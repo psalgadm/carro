@@ -1,17 +1,26 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {  Component,Input, Output, OnInit,  AfterViewChecked} from '@angular/core';
+
+import { CorreoComponent } from '../correo/correo.component';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent implements OnInit {
 
-  @Input() saludo = '';
+export class ListadoComponent implements  OnInit, AfterViewChecked {
 
-  constructor() { }
+  @Input() correo: CorreoComponent;
 
-  ngOnInit(): void {
+  entrada2: {email: string, validoCorreo: boolean} = {email: '', validoCorreo: false};
+
+
+  ngOnInit(){
+
   }
+
+  ngAfterViewChecked() {
+    console.log(this.correo);
+  } 
 
 }

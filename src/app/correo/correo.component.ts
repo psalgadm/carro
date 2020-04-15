@@ -8,7 +8,7 @@ import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef} from '@
 
 export class CorreoComponent implements OnInit {
 
-  @Output() emailAdded = new EventEmitter<{email: string}>();
+  @Output() emailAdded = new EventEmitter<{email: string, validoCorreo:boolean}>();
 
   constructor() { }
 
@@ -19,8 +19,14 @@ export class CorreoComponent implements OnInit {
 
     if(this.validar_email(inputEmail.value))
     {
-      this.emailAdded.emit({email: inputEmail.value});
-    }else{alert("Correo no valido."); inputEmail.value='';}
+      this.emailAdded.emit({email: inputEmail.value, validoCorreo:true});
+    }
+    else
+    {
+      alert("Correo no valido."); 
+      inputEmail.value='';
+      this.emailAdded.emit({email: '', validoCorreo:false});
+    }
   }
 
   validar_email( email ) 
