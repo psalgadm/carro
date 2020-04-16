@@ -1,29 +1,29 @@
 <div cellpadding="1" cellspacing="1" class="table table-bordered table-striped table-responsive" style="width:100%;display: block; overflow-x: auto;
 white-space: nowrap; ">
 
-    <div class="" style="display: table-row;" >
+    <div class="filaCaja" style="display: table-row;" >
 
-        <div class="caja" style="display: table-cell;" width="50%" >TIENDA DE VINILOS</div>
-        <div class="caja" style="display: table-cell;" width="50%" >CARRO DE COMPRAS</div>
+        <div class="cajatitulo" style="display: table-cell;" width="50%" >TIENDA DE VINILOS</div>
+        <div class="cajatitulo" style="display: table-cell;" width="50%" >CARRO DE COMPRAS</div>
     </div>  
 
-    <div class="" style="display: table-row;" >
+    <div class="filaCaja" style="display: table-row;" >
 
         <div class="caja" style="display: table-cell;" >
         
             <div class="table table-bordered table-striped table-responsive" style="display: table;" >
 
                 <div class="" style="display: table-row;" >
-                    <div class="" style="display: table-cell;" >Disco</div>   
-                    <div class="" style="display: table-cell;" >Valor</div>      
-                    <div class="" style="display: table-cell;" >Acciones</div>   
+                    <div class="celdaH" style="display: table-cell;" >Disco</div>   
+                    <div class="celdaH" style="display: table-cell;" >Valor</div>      
+                    <div class="celdaH" style="display: table-cell;" ></div>   
                 </div>
             
                 <div *ngFor="let d of discos; index as i" class="" style="display: table-row;" >
-                    <div class="" style="display: table-cell;" ><span class="disponible" [ngClass]="{'nodisponible': !getDisp(i)}">{{getDisco(i)}}</span></div>   
-                    <div class="" style="display: table-cell;" ><span class="disponible" [ngClass]="{'nodisponible': !getDisp(i)}">$ {{getValor(i)}}</span></div>     
-                    <div class="" style="display: table-cell;" >
-                        <button (click)="onAdd(i)" class="btn btn-success" [disabled] ="!getDisp(i)" >Agregar</button>
+                    <div class="celda" style="display: table-cell;" ><span class="disponible" [ngClass]="{'nodisponible': !getDisp(i)}">{{getDisco(i)}}</span></div>   
+                    <div class="celda" style="display: table-cell;" ><span class="disponible" [ngClass]="{'nodisponible': !getDisp(i)}">$ {{getValor(i)}}</span></div>     
+                    <div class="celda" style="display: table-cell;" >
+                        <button (click)="onAdd(i)" class="btn btn-success boton" [disabled] ="!getDisp(i)" >Agregar</button>
                     </div>   
                 </div>
             
@@ -35,16 +35,16 @@ white-space: nowrap; ">
 
             <div class="table table-bordered table-striped table-responsive" style="display: table;" >
                 <div class="" style="display: table-row;" >
-                    <div class="" style="display: table-cell;" >Disco</div>   
-                    <div class="" style="display: table-cell;" >Valor</div>      
-                    <div class="" style="display: table-cell;" >Acciones</div>   
+                    <div class="celdaH" style="display: table-cell;" >Disco</div>   
+                    <div class="celdaH" style="display: table-cell;" >Valor</div>      
+                    <div class="celdaH" style="display: table-cell;" ></div>   
                 </div>
             
                 <div *ngFor="let d of agregardisco; index as i" class="" style="display: table-row;" >
-                    <div class="" style="display: table-cell;" ><span class="carro" >{{getDisco2(i)}}</span></div>   
-                    <div class="" style="display: table-cell;" ><span class="carro" >$ {{getValor2(i)}}</span></div>     
-                    <div class="" style="display: table-cell;" >
-                        <button (click)="onDel(d.titulo)" class="btn btn-danger" >Eliminar</button>
+                    <div class="celda" style="display: table-cell;" ><span class="carro" >{{getDisco2(i)}}</span></div>   
+                    <div class="celda" style="display: table-cell;" ><span class="carro" >$ {{getValor2(i)}}</span></div>     
+                    <div class="celda" style="display: table-cell;" >
+                        <button (click)="onDel(d.titulo)" class="btn btn-danger boton" >Eliminar</button>
                     </div>   
                 </div>
             </div>        

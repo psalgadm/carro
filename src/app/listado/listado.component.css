@@ -1,5 +1,37 @@
+
+
+.filaCaja{
+	margin: .2em .2em .2em 2em;
+}
+
+.cajatitulo{
+	width: 400px;	
+	color: #424242;
+	font-weight: bold;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid #ccc;
+	text-align: center;
+}
+
 .caja{
-	width: 400px;
+	width: 400px;	
+	color: #A4A4A4;
+	font-weight: bold;
+}
+
+.celdaH{
+	background-color: #BDBDBD;
+	padding: .2em .2em .2em 2em;
+	color: #000000;
+	font-weight: bold;
+	font-size: 16px;
+	border: 0px;
+}
+
+.celda{
+	padding: .2em .2em .2em 2em;
 }
 
 .disponible{
@@ -18,4 +50,8 @@
 	color: #0B610B;
 	font-weight: bold;
 	font-size: 14px;
+}
+
+.boton{
+	margin: .5em .5em .5em 5em;
 }

@@ -320,6 +320,7 @@
   <app-correo [ngClass]="{'ocultar': entrada.validoCorreo}" (emailAdded)="onEmailAdded($event)" > </app-correo>
   <span [ngClass]="{'ocultar': !entrada.validoCorreo}">Hola: {{entrada.email}}</span><br><br> <br>
   <app-listado [ngClass]="{'ocultar': !entrada.validoCorreo}" > </app-listado>
+  <span [ngClass]="{'ocultar': !entrada.validoCorreo}"><a href="http://localhost:4200/" class="btn btn-outline-info" >VOLVER</a></span><br><br> <br>
 
 </div>
 
