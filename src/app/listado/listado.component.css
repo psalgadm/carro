@@ -1,0 +1,21 @@
+.caja{
+	width: 400px;
+}
+
+.disponible{
+	color: #0B2161;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.nodisponible{
+	color: #8A0808;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.carro{
+	color: #0B610B;
+	font-weight: bold;
+	font-size: 14px;
+}

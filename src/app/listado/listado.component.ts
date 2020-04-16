@@ -1,6 +1,4 @@
-import {  Component,Input, Output, OnInit,  AfterViewChecked} from '@angular/core';
-
-import { CorreoComponent } from '../correo/correo.component';
+import {  Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-listado',
@@ -8,19 +6,51 @@ import { CorreoComponent } from '../correo/correo.component';
   styleUrls: ['./listado.component.css']
 })
 
-export class ListadoComponent implements  OnInit, AfterViewChecked {
+export class ListadoComponent implements  OnInit {
+	
+  constructor() { }
 
-  @Input() correo: CorreoComponent;
+  ngOnInit(): void { }
 
-  entrada2: {email: string, validoCorreo: boolean} = {email: '', validoCorreo: false};
+  discos = [
+			{titulo:'Black Sabbath', valor:'25.000', disp:1},
+			{titulo:'Led Zeppelin', valor:'23.000', disp:1},
+			{titulo:'Iron Maiden', valor:'17.000', disp:1},
+			{titulo:'Slayer', valor:'24.000', disp:1},
+			{titulo:'Anthrax', valor:'22.000', disp:1}
+		];
 
+  
+  agregardisco = [];
 
-  ngOnInit(){
+  onAdd(e){ this.agregardisco.push(this.discos[e]); this.discos[e]["disp"]=0;}
 
+  getDisco(e){
+    return this.discos[e]["titulo"];
   }
 
-  ngAfterViewChecked() {
-    console.log(this.correo);
-  } 
+  getValor(e){
+    return this.discos[e]["valor"];
+  }
+
+  getDisp(e){
+    return this.discos[e]["disp"];
+  }
+
+  onDel(titulo:string){
+    var index:number = this.agregardisco.indexOf(this.agregardisco.find(x => x.titulo == titulo));
+    this.agregardisco.splice(index, 1);
+
+    var index2:number = this.discos.indexOf(this.discos.find(x => x.titulo == titulo));
+    this.discos[index2]["disp"] = 1;
+  }  
+
+  getDisco2(e){
+    return this.agregardisco[e]["titulo"];
+  }
+
+  getValor2(e){
+    return this.agregardisco[e]["valor"];
+  }
 
 }
